@@ -1254,12 +1254,17 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
   color: #fff;
   font-family: var(--font-h);
   font-weight: 600;
-  font-size: clamp(46px, 8vw, 90px);
-  line-height: 1.02;
-  letter-spacing: -0.04em;
+  font-size: clamp(38px, 5vw, 64px);
+  line-height: 1.06;
+  letter-spacing: -0.03em;
   text-wrap: balance;
+  word-break: normal;
+  overflow-wrap: normal;
+  hyphens: none;
   margin: 0;
 }
+/* «спине» не разрывается, подчёркивание держится на слове */
+.hero__title-boltword { white-space: nowrap; }
 .hero__title-amp {
   font-family: 'Caveat', cursive;
   font-weight: 700;
