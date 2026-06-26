@@ -795,17 +795,19 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
 .rates { padding-top: 16px; padding-bottom: 80px; }
 .rates__grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
   align-items: stretch;
 }
 .rate-card {
   position: relative;
   background: var(--color-soft);
   border-radius: 15px;
-  padding: 32px 24px 28px;
+  padding: 32px 22px 28px;
   display: flex; flex-direction: column; gap: 16px;
 }
+/* CTA прижата к низу — ряд кнопок ровный при разной длине состава */
+.rate-card .btn--block { margin-top: auto; }
 .rate-card--featured {
   background: var(--color-primary);
   color: #fff;
@@ -1049,9 +1051,12 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
   font-size: 22px; opacity: .6;
 }
 
-@media (max-width: 900px) {
-  .rates__grid { grid-template-columns: 1fr; max-width: 460px; margin: 0 auto; }
+@media (max-width: 1080px) {
+  .rates__grid { grid-template-columns: repeat(2, 1fr); max-width: 760px; margin: 0 auto; }
   .rate-card--featured { transform: none; }
+}
+@media (max-width: 560px) {
+  .rates__grid { grid-template-columns: 1fr; max-width: 460px; }
 }
 
 /* ======================== HELP ================================ */
@@ -1478,7 +1483,7 @@ h1, h2, h3 { font-family: var(--font-h); font-weight: 500; margin: 0; line-heigh
 }
 .hero__image {
   background-size: cover;
-  background-position: center 25%;  /* кадр обеих девушек — корпус в фокусе */
+  background-position: center 28%;  /* портрет: лицо + принт на футболке в кадре */
   border-radius: var(--radius-sm);
   height: 100%;
   min-height: 360px;
